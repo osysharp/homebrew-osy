@@ -47,7 +47,10 @@ class Osy < Formula
     EOS
   end
 
+  # `osy --help` exits 0, so the test that expected 1 failed every `brew test` (found 2026-10-19, publishing 0.14.2). The
+  # version line is the receipt that the symlinked script found its binary and that it is THIS release.
   test do
-    assert_match "osy", shell_output("#{bin}/osy --help 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/osy --version")
+    assert_match version.to_s, shell_output("#{bin}/osyrin --version")
   end
 end
