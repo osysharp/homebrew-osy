@@ -5,28 +5,28 @@
 class Osy < Formula
   desc "Osy# local runtime and CLI (osy + osyrin)"
   homepage "https://osysharp.com"
-  version "0.14.4"
+  version "0.14.5"
   # License is set once the project license lands (ledger L3).
 
   on_macos do
     on_arm do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.4/osy-macos-arm64.tar.gz"
-      sha256 "a984ece67d97c8ac65b0ef2970283b0318eaf3d231b0bb15387731f173c20e58"
+      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-macos-arm64.tar.gz"
+      sha256 "1f5f5e8c625441193d1c9eb605da9a3228c153e179238ab1ac9b9294e9f62890"
     end
     on_intel do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.4/osy-macos-x64.tar.gz"
-      sha256 "8d5a197ac62dd4b20cf0d8f420ce75a3c4d6ddc6615d7e319e2a651f0548a90f"
+      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-macos-x64.tar.gz"
+      sha256 "2409589d37f3634ee24999f741bcd8a896482cd9c0d56cdce6e64bcbe8320bb6"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.4/osy-linux-arm64.tar.gz"
-      sha256 "c1a925c30f10195452e47a34319378ba356dfbf857c625d78af68df7fa9e77b8"
+      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-linux-arm64.tar.gz"
+      sha256 "a9098c65669e44f34330c6605a43132b10bc8670bb8b5738f69362d95b9a6107"
     end
     on_intel do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.4/osy-linux-x64.tar.gz"
-      sha256 "1f98f2429afe00725644323451692769dbdf8e3f0f1ef9f7ff3e88609bbedcc6"
+      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-linux-x64.tar.gz"
+      sha256 "97fd203a423bf4444f50ed112a22d3d11c302152bf1eb2ef82067a15a7df0861"
     end
   end
 
