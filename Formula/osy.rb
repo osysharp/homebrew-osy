@@ -5,34 +5,34 @@
 class Osy < Formula
   desc "Osy# local runtime and CLI (osy + osyrin)"
   homepage "https://osysharp.com"
-  version "0.14.5"
-  # License is set once the project license lands (ledger L3).
+  version "0.15.1"
+  # Osyrin's licence terms: free to use, proprietary (card cli-licence-terms, owner 2026-10-19). Homebrew's license field takes
+  # SPDX identifiers only, and :cannot_represent is its word for terms SPDX has no identifier for. The terms themselves are
+  # LICENSE.txt, carried in the archive and installed into the prefix.
+  license :cannot_represent
 
+  # Apple silicon only: there is no Intel Mac build after 0.14.6 (owner, 2026-10-21), and Homebrew says so on an Intel Mac.
   on_macos do
-    on_arm do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-macos-arm64.tar.gz"
-      sha256 "1f5f5e8c625441193d1c9eb605da9a3228c153e179238ab1ac9b9294e9f62890"
-    end
-    on_intel do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-macos-x64.tar.gz"
-      sha256 "2409589d37f3634ee24999f741bcd8a896482cd9c0d56cdce6e64bcbe8320bb6"
-    end
+    depends_on arch: :arm64
+    url "https://github.com/osysharp/cli/releases/download/v0.15.1/osy-macos-arm64.tar.gz"
+    sha256 "cd9c4fc8add5d4988d339b54110aa405ed4665db3cb6b9d4150b482089015848"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-linux-arm64.tar.gz"
-      sha256 "a9098c65669e44f34330c6605a43132b10bc8670bb8b5738f69362d95b9a6107"
+      url "https://github.com/osysharp/cli/releases/download/v0.15.1/osy-linux-arm64.tar.gz"
+      sha256 "881ccffbfd6266672d51b6b3d38dfbba01d6219840865c5e4eb3d71b3b43804a"
     end
     on_intel do
-      url "https://github.com/osysharp/cli/releases/download/v0.14.5/osy-linux-x64.tar.gz"
-      sha256 "97fd203a423bf4444f50ed112a22d3d11c302152bf1eb2ef82067a15a7df0861"
+      url "https://github.com/osysharp/cli/releases/download/v0.15.1/osy-linux-x64.tar.gz"
+      sha256 "7e2eaa8cd7acf68a80afb7e4afbaaa1c646ca423653e5cd6c9d3ae28e26c8cef"
     end
   end
 
   def install
     # The whole self-contained tree lives in libexec (the runtime dylibs and the .vsix must sit beside the apphost);
     # osy and osyrin are the only things on PATH.
+    prefix.install "LICENSE.txt"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"osy"
     bin.install_symlink libexec/"osyrin"
