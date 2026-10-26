@@ -5,7 +5,7 @@
 class Osy < Formula
   desc "Osy# local runtime and CLI (osy + osyrin)"
   homepage "https://osysharp.com"
-  version "0.17.0"
+  version "0.17.3"
   # Osyrin's licence terms: free to use, proprietary (card cli-licence-terms, owner 2026-10-19). Homebrew's license field takes
   # SPDX identifiers only, and :cannot_represent is its word for terms SPDX has no identifier for. The terms themselves are
   # LICENSE.txt, carried in the archive and installed into the prefix.
@@ -14,18 +14,18 @@ class Osy < Formula
   # Apple silicon only: there is no Intel Mac build after 0.14.6 (owner, 2026-10-21), and Homebrew says so on an Intel Mac.
   on_macos do
     depends_on arch: :arm64
-    url "https://github.com/osysharp/cli/releases/download/v0.17.0/osy-macos-arm64.tar.gz"
-    sha256 "d1d9b522e1dea3970c119d6fca06d8b2fb43e4f0e5279973e23545a8a175c37b"
+    url "https://github.com/osysharp/cli/releases/download/v0.17.3/osy-macos-arm64.tar.gz"
+    sha256 "32eb246fca9f96e9d9af6d9ffa8e0214036e84f1d1441214ddd309f1ed4da0a9"
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/osysharp/cli/releases/download/v0.17.0/osy-linux-arm64.tar.gz"
-      sha256 "ef81c64546d8401fe8bfadc974639fc4725bb896d0dcd694c546d5411d95d2ca"
+      url "https://github.com/osysharp/cli/releases/download/v0.17.3/osy-linux-arm64.tar.gz"
+      sha256 "61f3d46b51299c02759acc65a77e03f7d8099a464de0ff0a35af7f8a7ee34af5"
     end
     on_intel do
-      url "https://github.com/osysharp/cli/releases/download/v0.17.0/osy-linux-x64.tar.gz"
-      sha256 "d16ba58e165904a3106b270af078ddcc9f43675432c504b446e68fb9ffdd3b37"
+      url "https://github.com/osysharp/cli/releases/download/v0.17.3/osy-linux-x64.tar.gz"
+      sha256 "06226e863740694def97bb66ebf2773e6a8e3e03b66519ac350790dd6be10e54"
     end
   end
 
